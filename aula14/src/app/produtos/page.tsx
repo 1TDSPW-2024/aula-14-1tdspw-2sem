@@ -1,48 +1,31 @@
-import Link from "next/link";
-
-export default function Produtos() {
-
-    const lista = [
-        { id: 1, nome: "cachorro-quente", preco: 10.50, desc: "Doguito" },
-        { id: 2, nome: "sanduba-frio", preco: 15.55, desc: "Chapinha" },
-        { id: 3, nome: "misto-cheio", preco: 22.77, desc: "Cheio de Vento" },
-        { id: 4, nome: "miauzito-dalhe", preco: 9.80, desc: "Churrasquinho da tia" },
-        { id: 5, nome: "coxinha-vem-que-tem", preco: 7.50, desc: "Vem que tem nada..." },
-    ];
-
+export default function Home() {
     return (
-        <div>
-            <h2>Produtos</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>NOME</th>
-                        <th>R$</th>
-                        <th>DESCRIÇÃO</th>
-                        <th>EDITAR</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {lista.map((lanche) => (
-                        <tr key={lanche.id}>
-                            <td>{lanche.id}</td>
-                            <td>{lanche.nome}</td>
-                            <td>{lanche.preco}</td>
-                            <td>{lanche.desc}</td>
-                            <td> <Link href={`/produtos/produto/${lanche.id}`}>Editar</Link></td>
-                        </tr>
-                    ))}
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td>
-                            Quantidade de lanches : {lista.length}
-                        </td>
-                    </tr>
-                </tfoot>
-            </table>
+        <div className="prose lg:prose-xl">
+            <h1>Página Principal</h1>
+            <div>
+                <select className="px-4 py-3 rounded-full">
+                    <option> - </option>
+                    <option>opção-1</option>
+                    <option>opção-2</option>
+                    <option>opção-3</option>
+                </select>
+                {/* Or change a checkbox color using text color utilities: */}
+                <input type="checkbox" className="rounded text-pink-500" />
+                <input type="email" className="form-input px-4 py-3 rounded-full" />
 
+                <select className="form-select px-4 py-3 rounded-full">
+                    <option> - </option>
+                    <option>opção-1</option>
+                    <option>opção-2</option>
+                    <option>opção-3</option>
+                </select>
+
+                <input
+                    type="checkbox"
+                    className="form-checkbox rounded text-pink-500"
+                />
+            </div>
         </div>
-    )
+    );
 }
+

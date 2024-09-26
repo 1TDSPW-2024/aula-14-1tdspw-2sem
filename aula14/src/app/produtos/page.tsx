@@ -1,14 +1,24 @@
+"use Client";
+import { TipoLanche } from "@/types";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Produtos() {
 
-    const lista = [
-        { id: 1, nome: "cachorro-quente", preco: 10.50, desc: "Doguito" },
-        { id: 2, nome: "sanduba-frio", preco: 15.55, desc: "Chapinha" },
-        { id: 3, nome: "misto-cheio", preco: 22.77, desc: "Cheio de Vento" },
-        { id: 4, nome: "miauzito-dalhe", preco: 9.80, desc: "Churrasquinho da tia" },
-        { id: 5, nome: "coxinha-vem-que-tem", preco: 7.50, desc: "Vem que tem nada..." },
-    ];
+    const [lista, setLista] = useState<TipoLanche[]>([]);
+
+    useEffect(() => {
+
+        const chamadaDaApi = async () => {
+            const response = await fetch("http://localhost:3000/api/base-route");
+            const dados = await response.json();
+            setLista(dados);
+        };
+
+        chamadaDaApi();
+    }, [])
+
+
 
     return (
         <div>

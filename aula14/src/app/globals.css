@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .cabecalho {
+    @apply bg-violet-200 text-white text-2xl;
+  }
+
+  
+}
+body {
+  background-color: violet;
+}
+

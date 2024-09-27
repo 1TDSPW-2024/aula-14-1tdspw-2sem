@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .cabecalho{
+    @apply bg-fuchsia-100 text-fuchsia-600 p-4;
+  }
+
+    .rodape{
+        @apply bg-fuchsia-100 text-fuchsia-600 p-4;
+    }
+}

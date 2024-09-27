@@ -1,6 +1,9 @@
+import "@/app/globals.css";
 import Cabecalho from "@/components/Cabecalho/Cabecalho";
 import Rodape from "@/components/Rodape/Rodape";
 import type { Metadata } from "next";
+import React from "react";
+import "tailwindcss/tailwind.css";
 
 export const metadata: Metadata = {
   title: "Exemplo de Boyler Plate",
